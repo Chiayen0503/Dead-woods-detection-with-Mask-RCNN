@@ -6,7 +6,6 @@ The project will help you build your own synthetic data with annotations and tra
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
 
 ```
 Give examples
