@@ -19,7 +19,7 @@ Later, We will only use two files:
 
 ### Step 3: Synthesize foregrounds (target object) and background images
 ```
-cd <path to image_composition.py>
+cd cocosynth-master/python
 
 python3 image_composition.py --input_dir <path to input> --output_dir <path to output> --count <number of synthetic images> --width <width of a synthetic image> --height <height of a synthetic image>
 
