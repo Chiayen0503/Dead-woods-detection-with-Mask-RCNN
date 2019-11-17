@@ -42,7 +42,7 @@ License URL:
 cd <path to output>
 python3 coco_json_utils.py -md mask_definitions.json -di dataset_info.json
 ```
-you will get a coco style annotation file <mask_definitions.json>
+you will get a coco style annotation file <coco_instances.json>
 
 ## Set the environment that can run Mask RCNN model
 ### Step 1: Download and execute a docker image in terminal
