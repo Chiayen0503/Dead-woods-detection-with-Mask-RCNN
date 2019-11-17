@@ -20,14 +20,10 @@ docker pull tensorflow/tensorflow:latest-gpu-py3
 nvidia-docker run -it -p 8888:8888 tensorflow/tensorflow:latest-gpu-py3
 ```
 
-### Write a shell script to install other dependancies that are not included in Tensorflow docker
-Create a shell script:
-```
-nano install.sh
-```
-
-Run the shell script:
+### Run a shell script to install other dependancies that are not included in Tensorflow docker
 ```
 bash install.sh
 ```
+
+
 
