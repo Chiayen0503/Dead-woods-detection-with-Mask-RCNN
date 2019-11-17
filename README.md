@@ -29,7 +29,7 @@ bash install.sh
 https://github.com/akTwelve/cocosynth
 Later, We will only focus on two files: 
 * (1) image_composition.py:
-    Synthesize images by assigning foregrounds (target Objects) to backgrounds and produce an annotation file. 
+    Synthesize images by assigning foregrounds (target Objects) to backgrounds and export an annotation file. 
 * (2) coco_json_utils.py:
     Format the annotation file to follow COCO annotation style.  
 ### Step 2: Produce foregrounds and background
