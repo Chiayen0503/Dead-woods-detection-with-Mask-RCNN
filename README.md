@@ -8,14 +8,17 @@ The project will help you build your own synthetic data with annotations and tra
 https://github.com/akTwelve/cocosynth
 Later, We will only use two files: 
 * (1) image_composition.py:
-    Synthesize images by assigning foregrounds (target Objects) to backgrounds and export an annotation file. 
+    Synthesize images by assigning foregrounds (target Objects) to backgrounds and export an annotation file (json). 
 * (2) coco_json_utils.py:
     Format the annotation file to follow COCO annotation style.  
 ### Step 2: Collect foregrounds (target object) and background images
-* (1) See tutorial "How to cut out an object in Gimp": https://www.youtube.com/watch?v=DLryAXsIZ04
-* (2) replace example pictures in foreground and background folder with yours 
-* (3) rename 
-
+* (1) Download Gimp: https://www.gimp.org/downloads/
+* (2) See tutorial "How to cut out an object in Gimp": https://www.youtube.com/watch?v=DLryAXsIZ04
+* (3) replace example pictures in "category" and "background" folder with yours 
+* (4) rename "super_category" and "category" with your labels, you can have multiple categories
+*     ex: super_category -> pet 
+*         category1 -> dog
+*         category2 -> cat
 
 ### Step 3: Synthesize foregrounds (target object) and background images
 ```
