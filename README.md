@@ -7,14 +7,16 @@ The project will help you build your own synthetic data with annotations and tra
 
 
 ### Pull a docker image from tensorflow 
-(Note: this is a GPU-only image. For CPU, you may try docker run -it --rm tensorflow/tensorflow)
+For CPU-only image:
+```
+docker run -it --rm tensorflow/tensorflow)
+```
+For GPU-only image:
+```
 docker pull tensorflow/tensorflow:latest-gpu-py3
-latest-gpu-py3: Pulling from tensorflow/tensorflow
-
-
 ```
 Give examples
-```
+
 
 
 
