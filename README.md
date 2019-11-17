@@ -26,6 +26,8 @@ python3 image_composition.py --input_dir <path to input> --output_dir <path to o
 ```
 
 
+
+
 ## Set the environment that can run Mask RCNN model
 ### Step 1: Download and execute a docker image in terminal
 Using a docker file which pre-installed tensorflow library, can prevent us dealing with tedious installation process and focus on training models or refining dataset.  
@@ -45,6 +47,8 @@ nvidia-docker run -it -p 8888:8888 tensorflow/tensorflow:latest-gpu-py3 bash
 ```
 bash install.sh
 ```
+
+
 
 ## Train a Mask RCNN model on your synthetic dataset
 
