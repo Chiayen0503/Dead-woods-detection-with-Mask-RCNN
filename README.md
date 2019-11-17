@@ -6,7 +6,7 @@ The project will help you build your own synthetic data with annotations and tra
 ## Create your own synthetic datasets and a coco format annotation file
 ### Step 1: Download repositery 
 https://github.com/akTwelve/cocosynth
-Later, We will only use two files: 
+* Later, We will only use two files: 
 * (1) image_composition.py:
     Synthesize images by assigning foregrounds (target Objects) to backgrounds and export an annotation file (json). 
 * (2) coco_json_utils.py:
@@ -15,19 +15,34 @@ Later, We will only use two files:
 * (1) Download Gimp: https://www.gimp.org/downloads/
 * (2) See tutorial "How to cut out an object in Gimp": https://www.youtube.com/watch?v=DLryAXsIZ04
 * (3) replace example pictures in "category" and "background" folder with yours 
-* (4) rename "super_category" and "category" with your labels, you can have multiple categories
-ex, rename super_category as pet, category1 as dog and category2 as cat
+* (4) rename "super_category" and "category" with your labels, you can have multiple categories. Ex, rename super_category as pet, category1 as dog and category2 as cat
 
 ### Step 3: Synthesize foregrounds (target object) and background images
 ```
 cd cocosynth-master/python
-
 python3 image_composition.py --input_dir <path to input> --output_dir <path to output> --count <number of synthetic images> --width <width of a synthetic image> --height <height of a synthetic image>
 
 ```
+following up adding data information in dataset_info.json:
 
+```
+Would you like to create dataset info json? (y/n) y
+Note: you can always modify the json manually if you need to update this.
+Description: 
+URL: 
+Version: 
+Contributor: 
+Add an image license? (y/n) y
+License name: 
+License URL:
+```
 
-
+### Step 4: Format the annotation file <mask_definitions.json> to follow COCO annotation style.
+```
+cd <path to output>
+python3 coco_json_utils.py -md mask_definitions.json -di dataset_info.json
+```
+you will get a coco style annotation file <mask_definitions.json>
 
 ## Set the environment that can run Mask RCNN model
 ### Step 1: Download and execute a docker image in terminal
@@ -48,8 +63,6 @@ nvidia-docker run -it -p 8888:8888 tensorflow/tensorflow:latest-gpu-py3 bash
 ```
 bash install.sh
 ```
-
-
 
 ## Train a Mask RCNN model on your synthetic dataset
 
