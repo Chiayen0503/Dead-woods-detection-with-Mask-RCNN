@@ -16,9 +16,9 @@ Later, We will only use two files:
 * (2) See tutorial "How to cut out an object in Gimp": https://www.youtube.com/watch?v=DLryAXsIZ04
 * (3) replace example pictures in "category" and "background" folder with yours 
 * (4) rename "super_category" and "category" with your labels, you can have multiple categories
-*     ex: super_category -> pet 
-*         category1 -> dog
-*         category2 -> cat
+*     ex: super_category => pet 
+*         category1 => dog
+*         category2 => cat
 
 ### Step 3: Synthesize foregrounds (target object) and background images
 ```
