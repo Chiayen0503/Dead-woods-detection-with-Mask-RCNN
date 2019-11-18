@@ -5,12 +5,12 @@
 
 * You can also hire an EC2 accelerated computing instance which saves time on training models. For more information to set up AWS EC2 p3.2xlarge instance, please refer to: https://aws.amazon.com/blogs/machine-learning/get-started-with-deep-learning-using-the-aws-deep-learning-ami/
 
-## Create your own synthetic datasets and a coco format annotation file
+## Create your own synthetic datasets and corresponding coco-format annotation file
 This will save you a lot of effort from manually making annotations through VGG annotator. The annotation process is always tedious and frustrative. However, you can use this synthetic method to prevent it. In addition, there is no limit the number of images you create.
 
 * The synthetic method developed by Immersive Limit, whose founder is an expert in AI and image processing.   
 
-### Step 1: Download repositery in local
+### Step 1: Download repositery to local
 ```
 git clone https://github.com/akTwelve/cocosynth.git
 ```
