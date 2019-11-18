@@ -10,7 +10,7 @@ This will save you a lot of effort from manually making annotations through VGG 
 
 * The synthetic method developed by Immersive Limit, whose founder is an expert in AI and image processing.   
 
-### Step 1: Download repositery 
+### Step 1: Download repositery in local
 ```
 git clone https://github.com/akTwelve/cocosynth.git
 ```
@@ -25,6 +25,7 @@ git clone https://github.com/akTwelve/cocosynth.git
 * (1) Download Gimp: https://www.gimp.org/downloads/
 * (2) See tutorial "How to cut out an object in Gimp": https://www.youtube.com/watch?v=DLryAXsIZ04 
 * (3) Create folders in "dataset"; the folders follow tree below:
+
 ```
 .
 ├── input
@@ -99,9 +100,9 @@ you will get a coco style annotation file <coco_instances.json>. In addition, sy
         ├── 000000000.jpg
         └── ...
 ``` 
-
+* Later, you will put your "train" and "val" folders in dissertation-master's "datasets" folder. 
 ## Set the environment that can run Mask RCNN model
-### Step 1: Download Docker
+### Step 1: Open a new terminal window and download Docker
 ```
 sudo apt-get install docker.io
 ```
@@ -119,7 +120,7 @@ docker pull tensorflow/tensorflow:latest-gpu-py3
 nvidia-docker run -it -p 8888:8888 tensorflow/tensorflow:latest-gpu-py3 bash
 ```
 
-### Step 3: Run a shell script to install other dependancies and Mask RCNN model that are not included in Tensorflow docker
+### Step 3: Run requirement.txt to install other dependancies and Mask RCNN model
 
 ```
 cd Mask_RCNN-master
@@ -128,8 +129,15 @@ pip install -r requirements.txt
 ```
 
 ## Train a Mask RCNN model on your synthetic dataset
-* (1) 
-
+* (1) Downloads this repositery (dissertation-master) and delete example train and val folders  
+```
+cd ~
+git clone https://github.com/Chiayen0503/dissertation.git
+cd dissertation-master/datasets 
+sudo rm -f -r train
+sudo rm -f -r val
+```
+* (2) Upload your train and val folders to docker images
 
 
 
