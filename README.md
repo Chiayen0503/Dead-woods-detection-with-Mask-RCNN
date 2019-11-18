@@ -84,7 +84,7 @@ you will get a coco style annotation file <coco_instances.json>. In addition, sy
     ├── 000000000.png
     └── ...
 ```
-## Step 5: Redo Step 1 to Step 4 to build a second, synthetic-image dataset as validation dataset. 
+### Step 5: Redo Step 1 to Step 4 to build a second, synthetic-image dataset as validation dataset. 
 * Copy all files from both outputs and seperately stores them into two folders named "train" and "val". Delete both "masks" folders, <dataset_info.json>, <coco_json_utils.py> and <mask_definitions.json> because Mask RCNN Matterport doesn't read them when training models. 
 * Your train and val datasets are prepared!
 
