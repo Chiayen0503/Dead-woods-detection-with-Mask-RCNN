@@ -1,7 +1,9 @@
 # Dead woods detection with Mask RCNN 
-This repository holds my final year in Lancaster University and dissertation project is extended from EU CanHeMon project.   
+* This repository holds my final year in Lancaster University and dissertation project is extended from EU CanHeMon project.   
 
-The project will help you build your own synthetic data with annotations and train a Mask RCNN model in a tensorflow docker. You can also hire an EC2 accelerated computing instance which saves time on training models. For more information to set up AWS EC2 p3.2xlarge instance, please refer to:
+* The project will help you build your own synthetic data with annotations and train a Mask RCNN model in a tensorflow docker. 
+
+* You can also hire an EC2 accelerated computing instance which saves time on training models. For more information to set up AWS EC2 p3.2xlarge instance, please refer to: https://aws.amazon.com/blogs/machine-learning/get-started-with-deep-learning-using-the-aws-deep-learning-ami/
 
 ## Create your own synthetic datasets and a coco format annotation file
 This will save you a lot of effort from manually making annotations through VGG annotator. The annotation process is always tedious and frustrative. However, you can use this synthetic method to prevent it. In addition, there is no limit the number of images you create.
@@ -33,7 +35,7 @@ git clone https://github.com/akTwelve/cocosynth.git
 └── output
 
 ```
-* (3) fills example pictures in "category" and "background" folder with yours 
+* (3) puts target object pictures in "category" and background pictures in "background" folder.
 * (4) rename "super_category" and "category" with your labels' names, you can have multiple "category" folders. Ex, rename super_category as pet, one category as dog and the other as cat. Vice versa, multiple "super_category" folders are acceptable.
 
 ### Step 3: Synthesize foregrounds (target object) and background images
@@ -96,8 +98,7 @@ you will get a coco style annotation file <coco_instances.json>. In addition, sy
     └── images
         ├── 000000000.jpg
         └── ...
-```
-In fact, you can even delete "masks" folders as Mask RCNN Matterport only read annotation file (json) and images.   
+``` 
 
 ## Set the environment that can run Mask RCNN model
 ### Step 1: Download Docker
