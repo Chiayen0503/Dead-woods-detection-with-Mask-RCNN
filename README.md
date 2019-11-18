@@ -1,7 +1,7 @@
 # Dead woods detection with Mask RCNN 
 * This repository holds my final year dissertation project. The project is extended from EU CanHeMon which suggested using neural network may help detect standing deadtrees. Link: https://ec.europa.eu/jrc/en/publication/canopy-health-monitoring-canhemon-project.    
 
-* The project will help you build your own synthetic data with annotations and train a Mask RCNN model in a tensorflow docker. 
+* The project will help you build your own synthetic data with coco-style annotations and train a Mask RCNN model in a tensorflow docker. 
 
 * You can also hire an EC2 accelerated computing instance which saves time on training models. For more information to set up AWS EC2 p3.2xlarge instance, please refer to: https://aws.amazon.com/blogs/machine-learning/get-started-with-deep-learning-using-the-aws-deep-learning-ami/
 
