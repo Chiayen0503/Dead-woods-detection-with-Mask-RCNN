@@ -199,12 +199,12 @@ def train(model):
     """Train the model."""
     # Training dataset.
     dataset_train = DatasetConfig()
-    dataset_train.load_dataset("/dissertation/dataset/train/coco_instances.json","/dissertation/dataset/train/images")
+    dataset_train.load_dataset("/dissertation-master/dataset/train/coco_instances.json","/dissertation-master/dataset/train/images")
     dataset_train.prepare()
 
     # Validation dataset
     dataset_val = DatasetConfig()
-    dataset_val.load_dataset( "/dissertation/dataset/val/coco_instances.json","/dissertation/dataset/val/images")
+    dataset_val.load_dataset( "/dissertation-master/dataset/val/coco_instances.json","/dissertation-master/dataset/val/images")
     dataset_val.prepare()
     
     #augmentation
