@@ -167,29 +167,4 @@ python3 custom.py train --dataset=/path/to/datasetfolder --weights=coco
 * (5) sample Mask visualization please refer to visualization-samples folders:https://github.com/Chiayen0503/dissertation/tree/master/visualization-samples
 
 ## Extra to learn: Manipulate hyperparameters to fine tune mask rcnn
-* There are six hyperparameters I changed in my dissertation: pre-trained net, activation function, learning rate, optimizer, Dropout function and data size.
-* To change a pre-trained net, change coco to imagenet:
-```
-cd /path/to/dissertation-master
-python3 custom.py train --dataset=/path/to/datasetfolder --weights=imagenet
-```
-* To change an activation function:
-```
-cd /path/to/model.py
-nano model.py 
-```
-In model.py, edit every line
-```
-x = KL.Activation('relu')(x)
-```
-to 
-```
-x = KL.LeakyReLU(alpha=0.01)(x)
-```
-Then, press ctrl + o + Enter (save) and ctrl + x + Enter (exit)
-* To change learning rate:
-```
-cd /path/to/custom.py
-nano custom.py
-```
-In model.py, edit 
+please check hyperparameters-fine-tune folder: https://github.com/Chiayen0503/dissertation/tree/master/hyperparameters-fine-tune
