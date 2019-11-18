@@ -47,7 +47,8 @@ python3 image_composition.py --input_dir <path to input> --output_dir <path to o
 ```
 for example, 
 ```
-python3 image_composition.py --input_dir /input --output_dir /output --count 5 --width 850 --height 850
+python3 image_composition.py --input_dir /datasets/input --output_dir /datasets/output --count 5 --width 850 --height 850
+# Note: mask rcnn prefer square images so you may set width equals height to save your time from preprocessing your images.
 ```
 
 following up adding data information in dataset_info.json:
@@ -123,6 +124,7 @@ nvidia-docker run -it -p 8888:8888 tensorflow/tensorflow:latest-gpu-py3 bash
 ### Step 3: Run requirement.txt to install other dependancies and Mask RCNN model
 
 ```
+git clone https://github.com/matterport/Mask_RCNN.git
 cd Mask_RCNN-master
 pip install -r requirements.txt
 
@@ -137,8 +139,19 @@ cd dissertation-master/datasets
 sudo rm -f -r train
 sudo rm -f -r val
 ```
-* (2) Upload your train and val folders to docker images
+* (2) open a second terminal and check docker images ID
 
+```
+docker ps
+```
 
-
-
+* (3) Use the second terminal to upload your train and val folders to docker images
+```
+cd /to/train/and/val/folders
+nvidia-docker cp train <replace with container ID>:/dissertation-master/datasets/train
+nvidia-docker cp val <replace with container ID>:/dissertation-master/datasets/train
+```
+example:
+```
+nvidia-docker cp train 2c89b6975e72:/dissertation-master/datasets/train
+```
