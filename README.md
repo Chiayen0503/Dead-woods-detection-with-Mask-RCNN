@@ -18,13 +18,19 @@ git clone https://github.com/akTwelve/cocosynth.git
 ### Step 2: Collect foregrounds (target object) and background images
 * (1) Download Gimp: https://www.gimp.org/downloads/
 * (2) See tutorial "How to cut out an object in Gimp": https://www.youtube.com/watch?v=DLryAXsIZ04 
-* (3) Create folders that follows the following tree:
-*  dataset - input - foregrounds - super_category - category
-                   - backgrounds
-           - output
+* (3) Create folders in "dataset"; the folders follow tree below:
+```
+.
+├── input
+│   ├── backgrounds
+│   └── foregrounds
+│       └── super_category
+│           └── category
+└── output
 
+```
 * (3) fills example pictures in "category" and "background" folder with yours 
-* (4) rename "super_category" and "category" with your labels, you can have multiple categories. Ex, rename super_category as pet, category1 as dog and category2 as cat
+* (4) rename "super_category" and "category" with your labels' names, you can have multiple "category" folders. Ex, rename super_category as pet, one category as dog and the other as cat. Vice versa, multiple "super_category" folders are acceptable.
 
 ### Step 3: Synthesize foregrounds (target object) and background images
 ```
@@ -32,8 +38,12 @@ cd cocosynth-master/python
 python3 image_composition.py --input_dir <path to input> --output_dir <path to output> --count <number of synthetic images> --width <width of a synthetic image> --height <height of a synthetic image>
 
 ```
-following up adding data information in dataset_info.json:
+for example, 
+```
+python3 image_composition.py --input_dir /input --output_dir /output --count 5 --width 850 --height 850
+```
 
+following up adding data information in dataset_info.json:
 ```
 Would you like to create dataset info json? (y/n) y
 Note: you can always modify the json manually if you need to update this.
@@ -51,7 +61,51 @@ License URL:
 cd <path to output>
 python3 coco_json_utils.py -md mask_definitions.json -di dataset_info.json
 ```
-you will get a coco style annotation file <coco_instances.json>
+you will get a coco style annotation file <coco_instances.json>. In addition, synthetic images will be stored in "images" folder and corresponding masks will be stored in "masks" folder. 
+* (1) Your "output" tree may look like this : 
+```
+.
+├── coco_instances.json
+├── coco_json_utils.py
+├── dataset_info.json
+├── images
+│   ├── 000000000.jpg
+│   └── ...
+├── mask_definitions.json
+└── masks
+    ├── 000000000.png
+    └── ...
+```
+## Step 5: Redo Step 1 to Step 4 to build a second, synthetic-image dataset as validation dataset. 
+* Copy all files from both outputs and seperately stores them into two folders named "train" and "val"
+* Your dataset is prepared!
+```
+.
+├── train
+│   ├── coco_instances.json
+│   ├── coco_json_utils.py
+│   ├── dataset_info.json
+│   ├── images
+│   │   ├── 000000000.jpg
+│   │   └── ...
+│   ├── mask_definitions.json
+│   └── masks
+│       ├── 000000000.png
+│       └── ...
+└── val
+    ├── coco_instances.json
+    ├── coco_json_utils.py
+    ├── dataset_info.json
+    ├── images
+    │   ├── 000000000.jpg
+    │   └── ...
+    ├── mask_definitions.json
+    └── masks
+        ├── 000000000.png
+        └── ...
+
+```
+In fact, you can even delete "masks" folders as Mask RCNN Matterport only read annotation file (json) and images.   
 
 ## Set the environment that can run Mask RCNN model
 ### Step 1: Download Docker
@@ -59,7 +113,7 @@ you will get a coco style annotation file <coco_instances.json>
 sudo apt-get install docker.io
 ```
 ### Step 2: Download and execute a docker image in terminal
-Using a docker file which pre-installed tensorflow library, can prevent us dealing with tedious installation process and focus on training models or refining dataset.  
+Using a docker image which pre-installed tensorflow library, can prevent us dealing with tedious installation process and focus on training models or refining dataset. Here, we use Tensorflow docker image for training neural network models.  
 
 Download and execute CPU-only image:
 ```
@@ -73,11 +127,7 @@ nvidia-docker run -it -p 8888:8888 tensorflow/tensorflow:latest-gpu-py3 bash
 ```
 
 ### Step 3: Run a shell script to install other dependancies and Mask RCNN model that are not included in Tensorflow docker
-* (1) open a new terminal window
-```
-docker cp src/. mycontainer:/target
-```
-* (2) 
+
 ```
 git https://github.com/Chiayen0503/dissertation.git
 cd dissertation
