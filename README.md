@@ -164,7 +164,8 @@ python3 custom.py train --dataset=/dissertation/datasets --weights=coco
 ```
 ## Investigate loss results and mask visualization
 * (1) You will get a score.csv and a .h5 file. The former allows you to investigate loss functions; the latter allows you to visualize mask predictions on either synthetic or raw picture. Please see <inspect_loss_history.ipynb> and <model_prediction_visualization.ipynb>.
-* (2) Samples of loss diagrams:
+* (2) Samples of loss diagrams
+
 ![alt text](https://github.com/Chiayen0503/dissertation/blob/master/visualization-samples/sample-loss.png)
 * (3) Samples of mask visualization please refer to visualization-samples 
 
