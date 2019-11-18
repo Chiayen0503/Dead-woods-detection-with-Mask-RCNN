@@ -102,7 +102,7 @@ you will get a coco style annotation file <coco_instances.json>. In addition, sy
         └── ...
 ``` 
 
-## Set the environment that can run Mask RCNN model
+## Set an environment that can run Mask RCNN model
 ### Step 1: Open a new terminal window and download Docker
 ```
 sudo apt-get install docker.io
