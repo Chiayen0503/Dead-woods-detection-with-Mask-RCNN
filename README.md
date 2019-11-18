@@ -86,7 +86,7 @@ you will get a coco style annotation file <coco_instances.json>. In addition, sy
 ```
 ## Step 5: Redo Step 1 to Step 4 to build a second, synthetic-image dataset as validation dataset. 
 * Copy all files from both outputs and seperately stores them into two folders named "train" and "val". Delete both "masks" folders, <dataset_info.json>, <coco_json_utils.py> and <mask_definitions.json> because Mask RCNN Matterport doesn't read them when training models. 
-* Your dataset is prepared!
+* Your train and val datasets are prepared!
 
 ```
 .
@@ -101,7 +101,7 @@ you will get a coco style annotation file <coco_instances.json>. In addition, sy
         ├── 000000000.jpg
         └── ...
 ``` 
-* Later, you will put your "train" and "val" folders in dissertation-master's "datasets" folder. 
+
 ## Set the environment that can run Mask RCNN model
 ### Step 1: Open a new terminal window and download Docker
 ```
@@ -162,5 +162,7 @@ cd /path/to/dissertation-master
 python3 custom.py train --dataset=/path/to/datasetfolder --weights=coco
 ```
 
-* (4) You will get a score.csv and a .h5 file. The former allows you to investigate loss functions; the latter allows you to visualize mask predictions on either synthetic or raw picture.
+* (4) You will get a score.csv and a .h5 file. The former allows you to investigate loss functions; the latter allows you to visualize mask predictions on either synthetic or raw picture. Please see <inspect_loss_history.ipynb> and <model_prediction_visualization.ipynb>.
+
+* (5) sample Mask visualization please refer to visualization-samples folders:https://github.com/Chiayen0503/dissertation/tree/master/visualization-samples
 
