@@ -126,7 +126,7 @@ nvidia-docker run -it -p 8888:8888 tensorflow/tensorflow:latest-gpu-py3 bash
 ```
 git clone https://github.com/matterport/Mask_RCNN.git
 cd Mask_RCNN-master
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 
 ```
 
@@ -147,7 +147,7 @@ docker ps
 
 * (3) Use the second terminal to upload your train and val folders to docker images
 ```
-cd /to/train/and/val/folders
+cd /to/your/train/and/val/folders
 nvidia-docker cp train <replace with container ID>:/dissertation-master/datasets/train
 nvidia-docker cp val <replace with container ID>:/dissertation-master/datasets/train
 ```
