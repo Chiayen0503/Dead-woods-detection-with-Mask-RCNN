@@ -159,7 +159,7 @@ nvidia-docker cp train 2c89b6975e72:/dissertation-master/datasets/train
 * (3) Train model in your docker environment (first terminal)
 ```
 cd /path/to/dissertation-master
-python3 custom.py train --dataset=/path/to/datasetfolder --weights=coco
+python3 custom.py train --dataset=/dissertation/datasets --weights=coco
 ```
 
 * (4) You will get a score.csv and a .h5 file. The former allows you to investigate loss functions; the latter allows you to visualize mask predictions on either synthetic or raw picture. Please see <inspect_loss_history.ipynb> and <model_prediction_visualization.ipynb>.
