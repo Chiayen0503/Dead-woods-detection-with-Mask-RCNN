@@ -164,7 +164,7 @@ python3 custom.py train --dataset=/dissertation/datasets --weights=coco
 
 * (4) You will get a score.csv and a .h5 file. The former allows you to investigate loss functions; the latter allows you to visualize mask predictions on either synthetic or raw picture. Please see <inspect_loss_history.ipynb> and <model_prediction_visualization.ipynb>.
 
-* (5) sample Mask visualization please refer to visualization-samples folders:https://github.com/Chiayen0503/dissertation/tree/master/visualization-samples
+* (5) Samples of mask visualization please refer to visualization-samples folders:https://github.com/Chiayen0503/dissertation/tree/master/visualization-samples
 
 ## Extra to learn: Manipulate hyperparameters to fine tune mask rcnn
 please check hyperparameters-fine-tune folder: https://github.com/Chiayen0503/dissertation/tree/master/hyperparameters-fine-tune
