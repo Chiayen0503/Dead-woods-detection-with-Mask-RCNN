@@ -1,5 +1,5 @@
 # Dead woods detection with Mask RCNN 
-* This repository holds my final year in Lancaster University and dissertation project is extended from EU CanHeMon project.   
+* This repository holds my final year dissertation project. The project is extended from EU CanHeMon.    
 
 * The project will help you build your own synthetic data with annotations and train a Mask RCNN model in a tensorflow docker. 
 
