@@ -168,6 +168,8 @@ python3 custom.py train --dataset=/dissertation/datasets --weights=coco
 * (5) Samples of mask visualization please refer to visualization-samples 
 
 ![alt text](https://github.com/Chiayen0503/dissertation/blob/master/visualization-samples/01.png)
+![alt text](https://github.com/Chiayen0503/dissertation/blob/master/visualization-samples/05.png)
+![alt text](https://github.com/Chiayen0503/dissertation/blob/master/visualization-samples/04.png)
 
 ## Extra to learn: Manipulate hyperparameters to fine tune mask rcnn
 please check hyperparameters-fine-tune folder: https://github.com/Chiayen0503/dissertation/tree/master/hyperparameters-fine-tune
