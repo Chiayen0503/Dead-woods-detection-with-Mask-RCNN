@@ -1,5 +1,5 @@
-# Dead woods detection with Mask RCNN 
-* This repository holds my final year dissertation project. The project is extended from EU CanHeMon which suggested using neural network may help detect standing deadtrees. Link: https://ec.europa.eu/jrc/en/publication/canopy-health-monitoring-canhemon-project.    
+# Train Mask RCNN on syntheic images to predict raw images 
+* This repository holds my final year dissertation project. The project is extended from EU CanHeMon which suggested using neural network may help detect standing deadtrees. Link to my paper: https://www.dropbox.com/home/deadwood-september?preview=report.pdf      
 
 * The project will help you build your own synthetic data with coco-style annotations and train a Mask RCNN model in a tensorflow docker. 
 
