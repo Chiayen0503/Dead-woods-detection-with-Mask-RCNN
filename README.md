@@ -122,13 +122,13 @@ nvidia-docker run -it -p 8888:8888 tensorflow/tensorflow:latest-gpu-py3 bash
 ### Step 3: Run a shell script to install other dependancies and Mask RCNN model that are not included in Tensorflow docker
 
 ```
-git https://github.com/Chiayen0503/dissertation.git
-cd dissertation
-bash install.sh
+cd Mask_RCNN-master
+pip install -r requirements.txt
+
 ```
 
 ## Train a Mask RCNN model on your synthetic dataset
-
+* (1) 
 
 
 
