@@ -151,7 +151,7 @@ cd /to/train/and/val/folders
 nvidia-docker cp train <replace with container ID>:/dissertation-master/datasets/train
 nvidia-docker cp val <replace with container ID>:/dissertation-master/datasets/train
 ```
-example:
+example: (change nvidia-docker to docker if you're running CPU-only docker image)
 ```
 nvidia-docker cp train 2c89b6975e72:/dissertation-master/datasets/train
 ```
