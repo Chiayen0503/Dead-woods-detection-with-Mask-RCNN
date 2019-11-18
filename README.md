@@ -4,6 +4,10 @@ This repository holds my final year in Lancaster University and dissertation pro
 The project will help you build your own synthetic data with annotations and train a Mask RCNN model in a tensorflow docker. You can also hire an EC2 accelerated computing instance which saves time on training models. For more information to set up AWS EC2 p3.2xlarge instance, please refer to:
 
 ## Create your own synthetic datasets and a coco format annotation file
+This will save you a lot of effort from manually making annotations through VGG annotator. The annotation process is always tedious and frustrative. However, you can use this synthetic method to prevent it. In addition, there is no limit the number of images you create.
+
+* The synthetic method developed by Immersive Limit, whose founder is an expert in AI and image processing.   
+
 ### Step 1: Download repositery 
 ```
 git clone https://github.com/akTwelve/cocosynth.git
@@ -77,33 +81,21 @@ you will get a coco style annotation file <coco_instances.json>. In addition, sy
     └── ...
 ```
 ## Step 5: Redo Step 1 to Step 4 to build a second, synthetic-image dataset as validation dataset. 
-* Copy all files from both outputs and seperately stores them into two folders named "train" and "val"
+* Copy all files from both outputs and seperately stores them into two folders named "train" and "val". Delete both "masks" folders, <dataset_info.json>, <coco_json_utils.py> and <mask_definitions.json> because Mask RCNN Matterport doesn't read them when training models. 
 * Your dataset is prepared!
+
 ```
 .
 ├── train
 │   ├── coco_instances.json
-│   ├── coco_json_utils.py
-│   ├── dataset_info.json
-│   ├── images
-│   │   ├── 000000000.jpg
-│   │   └── ...
-│   ├── mask_definitions.json
-│   └── masks
-│       ├── 000000000.png
+│   └── images
+│       ├── 000000000.jpg
 │       └── ...
 └── val
     ├── coco_instances.json
-    ├── coco_json_utils.py
-    ├── dataset_info.json
-    ├── images
-    │   ├── 000000000.jpg
-    │   └── ...
-    ├── mask_definitions.json
-    └── masks
-        ├── 000000000.png
+    └── images
+        ├── 000000000.jpg
         └── ...
-
 ```
 In fact, you can even delete "masks" folders as Mask RCNN Matterport only read annotation file (json) and images.   
 
