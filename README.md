@@ -47,8 +47,8 @@ python3 image_composition.py --input_dir <path to input> --output_dir <path to o
 ```
 for example, 
 ```
-python3 image_composition.py --input_dir /datasets/input --output_dir /datasets/output --count 5 --width 850 --height 850
-# Note: mask rcnn prefer square images so you may set width equals height to save your time from preprocessing your images.
+python3 image_composition.py --input_dir /cocosynth-master/datasets/input --output_dir /cocosynth-master/datasets/output --count 5 --width 850 --height 850
+# Note: mask rcnn prefer square images so you may set width equals to height to save your time from preprocessing your images.
 ```
 
 following up adding data information in dataset_info.json:
@@ -107,7 +107,7 @@ you will get a coco style annotation file <coco_instances.json>. In addition, sy
 ```
 sudo apt-get install docker.io
 ```
-### Step 2: Download and execute a docker image in terminal
+### Step 2: Download and execute a docker image in the first terminal
 Using a docker image which pre-installed tensorflow library, can prevent us dealing with tedious installation process and focus on training models or refining dataset. Here, we use Tensorflow docker image for training neural network models.  
 
 Download and execute CPU-only image:
@@ -139,7 +139,7 @@ cd dissertation-master/datasets
 sudo rm -f -r train
 sudo rm -f -r val
 ```
-* (2) open a second terminal and check docker images ID
+* (2) Open a second terminal and check docker images ID
 
 ```
 docker ps
@@ -155,3 +155,12 @@ example:
 ```
 nvidia-docker cp train 2c89b6975e72:/dissertation-master/datasets/train
 ```
+
+* (3) Train model in your docker environment (first terminal)
+```
+cd /path/to/dissertation-master
+python3 custom.py train --dataset=/path/to/datasetfolder --weights=coco
+```
+
+* (4) You will get a score.csv and a .h5 file. The former allows you to investigate loss functions; the latter allows you to visualize mask predictions on either synthetic or raw picture.
+
