@@ -70,7 +70,7 @@ cd <path to output>
 python3 coco_json_utils.py -md mask_definitions.json -di dataset_info.json
 ```
 you will get a coco style annotation file <coco_instances.json>. In addition, synthetic images will be stored in "images" folder and corresponding masks will be stored in "masks" folder. 
-* (1) Your "output" tree may look like this : 
+* Your "output" tree may look like this : 
 ```
 .
 ├── coco_instances.json
@@ -145,7 +145,7 @@ sudo rm -f -r val
 docker ps
 ```
 
-* (3) Use the second terminal to upload your train and val folders to docker images
+* (3) Use the second terminal to upload your local train and val folders to docker images
 ```
 cd /to/your/train/and/val/folders
 nvidia-docker cp train <replace with container ID>:/dissertation-master/datasets/train
