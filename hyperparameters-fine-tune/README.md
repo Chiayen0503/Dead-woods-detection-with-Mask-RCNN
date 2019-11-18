@@ -47,7 +47,7 @@ or
 OPTIMIZER = "SDG"
 ```
 
-## optimizer
+## Dropout function
 To add Dropout function:
 ```
 cd /path/to/model.py
