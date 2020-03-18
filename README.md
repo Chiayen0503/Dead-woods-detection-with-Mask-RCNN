@@ -169,7 +169,7 @@ python3 custom.py train --dataset=/dissertation/datasets --weights=coco
 * (1) You will get a score.csv and a .h5 file. The former allows you to investigate loss functions; the latter allows you to visualize mask predictions on either synthetic or raw picture.
 
 
-* (2) For score.csv file: check loss results by modifying ```df = pd.read_csv("/path/to/score.csv")``` in <inspect_loss_history.ipynb>.
+* (2) For score.csv file: your default csv path is set as /path/to/dissertation-master. Check loss results by modifying ```df = pd.read_csv("/path/to/score.csv")``` in <inspect_loss_history.ipynb>.
 
 
 * (3) For .h5 file: your default ```custom_WEIGHTS_PATH``` in <model_prediction_visualization.ipynb> is set as /root/logs which stores a trained weight "mask_rcnn_dead_(num_epoch).h5". Check mask prediction results by modifying following line in <model_prediction_visualization.ipynb>. 
