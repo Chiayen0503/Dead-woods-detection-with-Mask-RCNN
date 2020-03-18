@@ -1,5 +1,5 @@
 # Train Mask RCNN on syntheic images to predict raw images 
-* This repository holds my final year dissertation project. The project is extended from EU CanHeMon which suggested using neural network may help detect standing deadtrees. Link to my paper: https://www.dropbox.com/home/deadwood-september?preview=report.pdf      
+* This repository holds my final year dissertation project. The project is extended from EU CanHeMon which suggested using neural network may help detect standing deadtrees.      
 
 * The project will help you build your own synthetic data with coco-style annotations and train a Mask RCNN model in a tensorflow docker. 
 
@@ -132,7 +132,7 @@ pip3 install -r requirements.txt
 ```
 
 ## Train a Mask RCNN model on your synthetic dataset
-* (1) Downloads this repositery (dissertation-master) and delete example train and val folders  
+* (1) Open the first terminal, downloads this repositery (dissertation-master) and delete example train and val folders  
 ```
 cd ~
 git clone https://github.com/Chiayen0503/dissertation.git
@@ -157,17 +157,28 @@ example (Note: change command "nvidia-docker" to "docker" if you're running CPU-
 nvidia-docker cp train 2c89b6975e72:/dissertation-master/datasets/train
 ```
 
-* (3) Train model in your docker environment (first terminal)
+* (4) Train model in your docker environment (first terminal)
 ```
 cd /path/to/dissertation-master
 python3 custom.py train --dataset=/dissertation/datasets --weights=coco
 ```
+
+
+
 ## Investigate loss results and mask visualization
-* (1) You will get a score.csv and a .h5 file. The former allows you to investigate loss functions; the latter allows you to visualize mask predictions on either synthetic or raw picture. For more samples, please see <inspect_loss_history.ipynb> and <model_prediction_visualization.ipynb>.
-* (2) Samples of loss diagrams
+* (1) You will get a score.csv and a .h5 file. The former allows you to investigate loss functions; the latter allows you to visualize mask predictions on either synthetic or raw picture.
+
+* (2) For .h5 file: your default ```custom_WEIGHTS_PATH``` in <model_prediction_visualization.ipynb> is set as /root/logs which stores a trained weight "mask_rcnn_dead_(num_epoch).h5". Check mask prediction results by modifying following line in <model_prediction_visualization.ipynb>. 
+```
+custom_WEIGHTS_PATH = "/path/to/.h5"
+```
+
+* (3) For score.csv file: check loss results by modifying ```df = pd.read_csv("/path/to/score.csv")``` in <inspect_loss_history.ipynb>.
+
+* (4) Samples of loss diagrams
 
 ![alt text](https://github.com/Chiayen0503/dissertation/blob/master/visualization-samples/sample-loss.png)
-* (3) Samples of mask visualization
+* (5) Samples of mask visualization
 
 ![alt text](https://github.com/Chiayen0503/dissertation/blob/master/visualization-samples/01.png)
 ![alt text](https://github.com/Chiayen0503/dissertation/blob/master/visualization-samples/05.png)
